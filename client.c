@@ -6,7 +6,7 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 12:15:23 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/11/14 14:23:40 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/11/14 18:37:32 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void    print_bits(unsigned char octet, pid_t pid)
+void	print_bits(unsigned char octet, pid_t pid)
 {
 	int	bit;
-	int i;
 
 	bit = 0;
 	while (bit < 8)
@@ -34,26 +33,21 @@ void    print_bits(unsigned char octet, pid_t pid)
 	}
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	pid_t	pid;
-	int i;
-	
+	int		i;
+
 	i = 0;
-	if (argc > 3)
-	{
-		printf("wtf are u doing? too many arguments.");
-		exit(-1);
-	}
-	else
+	if (argc == 3)
 	{
 		pid = atoi(argv[1]);
-		while(argv[2][i])
+		while (argv[2][i])
 		{
 			print_bits(argv[2][i], pid);
 			i++;
 		}
-		
-		return (0);
+		print_bits('\n', pid);
 	}
+	return (0);
 }
