@@ -36,10 +36,13 @@ $(CLIENT) : $(LIBFT) $(PRINTF) $(OBJS)
 	@echo "Client compiled."
 
 clean :
+	@echo "Cleaning..."
 	@make -C libft clean
 	@make -C ft_printf clean
+	@$(RM) $(OBJS)
 
 fclean : clean
+	@echo "Cleaning bins..."
 	@make -C libft fclean
 	@make -C ft_printf fclean
 	@rm -f $(SERVER) $(CLIENT)
