@@ -6,15 +6,11 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/14 12:15:23 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/11/14 18:37:32 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/11/16 15:48:36 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <signal.h>
-#include <string.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "minitalk.h"
 
 void	print_bits(unsigned char octet, pid_t pid)
 {
@@ -27,8 +23,8 @@ void	print_bits(unsigned char octet, pid_t pid)
 			kill(pid, SIGUSR2);
 		else
 			kill(pid, SIGUSR1);
+		octet = octet << 1;
 		bit++;
-		octet <<= 1;
 		usleep(100);
 	}
 }
@@ -41,13 +37,13 @@ int	main(int argc, char **argv)
 	i = 0;
 	if (argc == 3)
 	{
-		pid = atoi(argv[1]);
+		pid = ft_atoi(argv[1]);
 		while (argv[2][i])
 		{
 			print_bits(argv[2][i], pid);
 			i++;
 		}
-		print_bits('\n', pid);
+		print_bits('\0', pid);
 	}
 	return (0);
 }
