@@ -6,7 +6,7 @@
 /*   By: anas <aarbaoui@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:09:53 by anas              #+#    #+#             */
-/*   Updated: 2022/11/20 11:57:45 by anas             ###   ########.fr       */
+/*   Updated: 2022/11/20 12:13:25 by anas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	signal_error()
 	exit(0);
 }
 
-void	chartobin(unsigned char c, unsigned long pid)
+void	chartobin(unsigned char c, pid_t pid)
 {
 	int	bit;
 
@@ -42,7 +42,7 @@ void	chartobin(unsigned char c, unsigned long pid)
 	}
 }
 
-void	send_message(char *message, int pid)
+void	send_message(char *message, pid_t pid)
 {
 	int	i;
 
@@ -69,7 +69,7 @@ void	handler(int sig)
 }
 int main(int argc, char **argv)
 {
-	unsigned long	pid;
+	pid_t	pid;
 
 	if (argc != 3)
 	{

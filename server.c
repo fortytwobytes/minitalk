@@ -6,7 +6,7 @@
 /*   By: anas <aarbaoui@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:09:47 by anas              #+#    #+#             */
-/*   Updated: 2022/11/20 11:57:54 by anas             ###   ########.fr       */
+/*   Updated: 2022/11/20 12:13:40 by anas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	ft_print_banner(__pid_t pid)
 	 BOLD, GREEN, YELLOW, GREEN, pid, RESET);
 }
 
-void	sigerror(unsigned long clientpid)
+void	sigerror(pid_t clientpid)
 {
 	ft_printf("%sError:%s Cannot send recognition signal to client PID: %d",
 	 RED, RESET, clientpid);
 	exit(0);
 }
-void	sighandlehelp(char *c, int *i, unsigned long *clientpid)
+void	sighandlehelp(char *c, int *i, pid_t *clientpid)
 {
 	write(1, c, 1);
 	if (*c == '\0')
@@ -59,10 +59,10 @@ void	sighandlehelp(char *c, int *i, unsigned long *clientpid)
 
 void	sighandle(int sig, siginfo_t *info, void *context)
 {
-	static int	i;
-	static char	c;
-	static unsigned long	clientpid;
-	static unsigned long	workingpid;
+	static int		i;
+	static char		c;
+	static pid_t	clientpid;
+	static pid_t	workingpid;
 
 	(void)context;
 	if (!clientpid)
@@ -85,7 +85,7 @@ void	sighandle(int sig, siginfo_t *info, void *context)
 
 int main(void)
 {
-	unsigned long pid;
+	pid_t			pid;
 	struct sigaction sa;
 	
 	pid = getpid();
