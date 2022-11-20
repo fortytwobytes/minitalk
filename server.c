@@ -6,7 +6,7 @@
 /*   By: anas <aarbaoui@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:09:47 by anas              #+#    #+#             */
-/*   Updated: 2022/11/20 12:13:40 by anas             ###   ########.fr       */
+/*   Updated: 2022/11/20 12:19:05 by anas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,35 @@
 void	ft_print_banner(__pid_t pid)
 {
 	ft_printf("%s%s ███▄ ▄███▓██▓███▄    █ ██▄▄▄█████▓▄▄▄      ██▓    ██ ▄█▀\n",
-	 BOLD, RED);
+		BOLD, RED);
 	ft_printf("%s%s▓██▒▀█▀ ██▓██▒██ ▀█   █▓██▓  ██▒ ▓▒████▄   ▓██▒    ██▄█▒ \n",
-	 BOLD, RED);
+		BOLD, RED);
 	ft_printf("%s%s▓██    ▓██▒██▓██  ▀█ ██▒██▒ ▓██░ ▒▒██  ▀█▄ ▒██░   ▓███▄░ \n",
-	 BOLD, RED);
+		BOLD, RED);
 	ft_printf("%s%s▒██    ▒██░██▓██▒  ▐▌██░██░ ▓██▓ ░░██▄▄▄▄██▒██░   ▓██ █▄ \n",
-	 BOLD, RED);
+		BOLD, RED);
 	ft_printf("%s%s▒██▒   ░██░██▒██░   ▓██░██░ ▒██▒ ░ ▓█   ▓██░██████▒██▒ █▄\n",
-	 BOLD, RED);
+		BOLD, RED);
 	ft_printf("%s%s░ ▒░   ░  ░▓ ░ ▒░   ▒ ▒░▓   ▒ ░░   ▒▒   ▓▒█░ ▒░▓  ▒ ▒▒ ▓▒\n",
-	 BOLD, RED);
+		BOLD, RED);
 	ft_printf("%s%s░  ░      ░▒ ░ ░░   ░ ▒░▒ ░   ░     ▒   ▒▒ ░ ░ ▒  ░ ░▒ ▒░\n",
-	 BOLD, RED);
+		BOLD, RED);
 	ft_printf("%s%s░      ░   ▒ ░  ░   ░ ░ ▒ ░ ░       ░   ▒    ░ ░  ░ ░░ ░ \n",
-	 BOLD, RED);
+		BOLD, RED);
 	ft_printf("%s%s       ░   ░          ░ ░               ░  ░   ░  ░  ░   \n\
-	%s", BOLD, RED, RESET);
+		%s", BOLD, RED, RESET);
 	ft_printf("													 		\n");
 	ft_printf("%s%s		by: aarbaoui %s| %sPID: %d%s\n",
-	 BOLD, GREEN, YELLOW, GREEN, pid, RESET);
+		BOLD, GREEN, YELLOW, GREEN, pid, RESET);
 }
 
 void	sigerror(pid_t clientpid)
 {
 	ft_printf("%sError:%s Cannot send recognition signal to client PID: %d",
-	 RED, RESET, clientpid);
+		RED, RESET, clientpid);
 	exit(0);
 }
+
 void	sighandlehelp(char *c, int *i, pid_t *clientpid)
 {
 	write(1, c, 1);
@@ -83,11 +84,11 @@ void	sighandle(int sig, siginfo_t *info, void *context)
 	kill(clientpid, SIGUSR2);
 }
 
-int main(void)
+int	main(void)
 {
-	pid_t			pid;
-	struct sigaction sa;
-	
+	pid_t				pid;
+	struct sigaction	sa;
+
 	pid = getpid();
 	ft_print_banner(pid);
 	sa.sa_sigaction = sighandle;

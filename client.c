@@ -6,13 +6,13 @@
 /*   By: anas <aarbaoui@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:09:53 by anas              #+#    #+#             */
-/*   Updated: 2022/11/20 12:13:25 by anas             ###   ########.fr       */
+/*   Updated: 2022/11/20 12:19:39 by anas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	signal_error()
+void	signal_error(void)
 {
 	ft_printf("%sError: %sWrong PID or Signal Error", RED, RESET);
 	exit(0);
@@ -67,7 +67,8 @@ void	handler(int sig)
 		return ;
 	}
 }
-int main(int argc, char **argv)
+
+int	main(int argc, char **argv)
 {
 	pid_t	pid;
 
