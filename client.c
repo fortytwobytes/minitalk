@@ -6,7 +6,7 @@
 /*   By: anas <aarbaoui@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:09:53 by anas              #+#    #+#             */
-/*   Updated: 2022/11/20 12:19:39 by anas             ###   ########.fr       */
+/*   Updated: 2022/11/20 12:24:44 by anas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	signal_error(void)
 {
 	ft_printf("%sError: %sWrong PID or Signal Error", RED, RESET);
-	exit(0);
+	exit(-1);
 }
 
 void	chartobin(unsigned char c, pid_t pid)
@@ -59,7 +59,7 @@ void	handler(int sig)
 {
 	if (sig == SIGUSR1)
 	{
-		ft_printf("%s%sMessage sent%s", GREEN, BOLD, RESET);
+		ft_printf("%s%sMessage sent%s\n", GREEN, BOLD, RESET);
 		return ;
 	}
 	else if (sig == SIGUSR2)

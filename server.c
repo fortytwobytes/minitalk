@@ -6,7 +6,7 @@
 /*   By: anas <aarbaoui@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:09:47 by anas              #+#    #+#             */
-/*   Updated: 2022/11/20 12:19:05 by anas             ###   ########.fr       */
+/*   Updated: 2022/11/20 12:24:05 by anas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	sigerror(pid_t clientpid)
 {
 	ft_printf("%sError:%s Cannot send recognition signal to client PID: %d",
 		RED, RESET, clientpid);
-	exit(0);
+	exit(-1);
 }
 
 void	sighandlehelp(char *c, int *i, pid_t *clientpid)
@@ -75,7 +75,8 @@ void	sighandle(int sig, siginfo_t *info, void *context)
 		i = 0;
 		c = 0;
 	}
-	c |= (sig == SIGUSR2);
+
+	c = c | (sig == SIGUSR2);
 	i++;
 	if (i == 8)
 		sighandlehelp(&c, &i, &clientpid);
