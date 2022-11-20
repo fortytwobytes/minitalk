@@ -6,7 +6,7 @@
 /*   By: anas <aarbaoui@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:09:47 by anas              #+#    #+#             */
-/*   Updated: 2022/11/20 11:56:25 by anas             ###   ########.fr       */
+/*   Updated: 2022/11/20 11:57:54 by anas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	sighandle(int sig, siginfo_t *info, void *context)
 	if (i == 8)
 		sighandlehelp(&c, &i, &clientpid);
 	c <<= 1;
-	usleep(1000);
+	usleep(100);
 	kill(clientpid, SIGUSR2);
 }
 

@@ -6,7 +6,7 @@
 /*   By: anas <aarbaoui@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:09:53 by anas              #+#    #+#             */
-/*   Updated: 2022/11/20 11:57:01 by anas             ###   ########.fr       */
+/*   Updated: 2022/11/20 11:57:45 by anas             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	chartobin(unsigned char c, unsigned long pid)
 		c <<= 1;
 		bit++;
 		pause();
-		usleep(1000);
+		usleep(100);
 	}
 }
 
