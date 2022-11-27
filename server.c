@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anas <aarbaoui@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 15:09:47 by anas              #+#    #+#             */
-/*   Updated: 2022/11/20 12:24:05 by anas             ###   ########.fr       */
+/*   Created: 2022/11/19 15:09:47 by aarbaoui          #+#    #+#             */
+/*   Updated: 2022/11/27 12:31:45 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
 
-void	ft_print_banner(__pid_t pid)
+void	ft_print_banner(pid_t pid)
 {
 	ft_printf("%s%s ███▄ ▄███▓██▓███▄    █ ██▄▄▄█████▓▄▄▄      ██▓    ██ ▄█▀\n",
 		BOLD, RED);
@@ -75,7 +75,6 @@ void	sighandle(int sig, siginfo_t *info, void *context)
 		i = 0;
 		c = 0;
 	}
-
 	c = c | (sig == SIGUSR2);
 	i++;
 	if (i == 8)

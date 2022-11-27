@@ -6,13 +6,13 @@
 /*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 11:18:56 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/10/28 13:06:30 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2022/11/27 13:21:33 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *s)
+static int	ft_strlen(char *s)
 {
 	int	i;
 

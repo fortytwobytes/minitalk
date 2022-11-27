@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anas <aarbaoui@student.1337.ma>            +#+  +:+       +#+        */
+/*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/19 15:09:53 by anas              #+#    #+#             */
-/*   Updated: 2022/11/20 12:24:44 by anas             ###   ########.fr       */
+/*   Created: 2022/11/19 15:09:53 by aarbaoui          #+#    #+#             */
+/*   Updated: 2022/11/27 13:21:43 by aarbaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	handler(int sig)
 {
 	if (sig == SIGUSR1)
 	{
-		ft_printf("%s%sMessage sent%s\n", GREEN, BOLD, RESET);
+		ft_printf("\n%s%sMessage sent%s\n", GREEN, BOLD, RESET);
 		return ;
 	}
 	else if (sig == SIGUSR2)
