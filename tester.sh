@@ -85,14 +85,14 @@ fi
 ### Test 2 ###
 if [[ $t2 == 1 || $tm == 1 ]]
 then
-    echo "${L_Green}\n [Test 2]\tEmpty string${NC}"
+    echo "${L_Green} [Test 2]\tEmpty string${NC}"
     $PATH_TO_CLIENT $p_id "" 
 fi
 
 ### Test 3 ###
 if [[ $t3 == 1 || $tm == 1 ]]
 then
-    echo "${L_Green}\n [Test 3]\tSending big str with 20 000 char${NC}"
+    echo "${L_Green} [Test 3]\tSending big str with 20 000 char${NC}"
     $PATH_TO_CLIENT $p_id "
 
                                                LL             A
@@ -261,7 +261,7 @@ fi
 ### Test 4 ###
 if [[ $t4 == 1 || $tm == 1 ]]
 then
-    echo "${L_Green}\n [Test 4]\tTrying to crash your exhange Server-Client, sending str with 3 000 char (15 times) ${NC}"
+    echo "${L_Green} [Test 4]\tTrying to crash your exhange Server-Client, sending str with 3 000 char (15 times) ${NC}"
 
     for i in {1..15}
     do
@@ -297,7 +297,7 @@ fi
 ### Test 5 ###
 if [[ $t5 == 1 || $tb == 1 ]]
 then
-    echo "${L_Green}\n [Test 5]\tGuess the movie with emojis ${NC}"
+    echo "${L_Green} [Test 5]\tGuess the movie with emojis ${NC}"
 
     $PATH_TO_CLIENT $p_id "
      ⛴️  +  🌊  + 💥 = ❓
@@ -309,7 +309,7 @@ fi
 ### Test 6 ###
 if [[ $t6 == 1 || $tb == 1 ]]
 then
-    echo "${L_Green}\n [Test 6]\tTesting the connexion between server-client, sending str with 5 300 char (10 times)${NC}"
+    echo "${L_Green} [Test 6]\tTesting the connexion between server-client, sending str with 5 300 char (10 times)${NC}"
     for i in {1..10}
     do
         echo -n "${L_Green} [ ${i} ]${NC}"
@@ -359,4 +359,4 @@ then
     done
 fi
 
-echo "\nIf all was corrrectly display on your server terminal: Perfect, googd job! 💪"
+echo "If all was corrrectly display on your server terminal: Perfect, good job! 💪"
