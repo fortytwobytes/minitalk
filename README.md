@@ -12,9 +12,9 @@ The main challenge in Minitalk is to implement a communication protocol that all
 
 To use Minitalk, follow these steps:
 
-1.  Clone the project repository: `git clone https://github.com/Anarbb/minitalk.git`
+1.  Clone the project repository: `git clone https://github.com/fortytwobytes/minitalk.git`
 
-![0](https://github.com/Anarbb/minitalk/assets/65725801/6b3da79e-ac90-4906-88e7-8e3862e48176)
+![0](https://github.com/fortytwobytes/minitalk/assets/65725801/3ff0bfd6-9a7a-4df1-b0c6-5a3b7fcaf1cf)
 
 2.  Navigate to the project directory: `cd minitalk`
     
