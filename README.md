@@ -14,7 +14,7 @@ To use Minitalk, follow these steps:
 
 1.  Clone the project repository: `git clone https://github.com/Anarbb/minitalk.git`
 
-    ![0](https://github.com/Anarbb/minitalk/assets/65725801/6b3da79e-ac90-4906-88e7-8e3862e48176)
+![0](https://github.com/Anarbb/minitalk/assets/65725801/6b3da79e-ac90-4906-88e7-8e3862e48176)
 
 2.  Navigate to the project directory: `cd minitalk`
     
@@ -28,7 +28,7 @@ To use Minitalk, follow these steps:
 
 4.  Start the server process: `./server`
 
-    ![2](https://github.com/Anarbb/minitalk/assets/65725801/8f291b6c-87e4-4ea2-8123-a47a40e2e5c0)
+![2](https://github.com/Anarbb/minitalk/assets/65725801/8f291b6c-87e4-4ea2-8123-a47a40e2e5c0)
 
 5.  In a separate terminal, start the client process: `./client [server_pid] [message]`
     
@@ -39,7 +39,7 @@ To use Minitalk, follow these steps:
 
 6.  The client will send the message to the server, and the server will display the received message.
 
-    ![5](https://github.com/Anarbb/minitalk/assets/65725801/89c5c2fa-3613-4ccd-b9c5-a53a13ced76f)
+![5](https://github.com/Anarbb/minitalk/assets/65725801/89c5c2fa-3613-4ccd-b9c5-a53a13ced76f)
 
 Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
