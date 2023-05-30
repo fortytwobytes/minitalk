@@ -41,6 +41,27 @@ To use Minitalk, follow these steps:
 
 ![5](https://github.com/Anarbb/minitalk/assets/65725801/89c5c2fa-3613-4ccd-b9c5-a53a13ced76f)
 
+## Tester
+
+To use the tester script, follow these steps:
+
+1.  Ensure the tester script (`tester.sh`) is present in the project directory.
+    
+2.  Set the execution permissions for the tester script: `chmod +x ./tester.sh`
+    
+3.  Run the tester script with the server PID and options:
+    
+    -   For mandatory part testing: `./tester.sh [server_pid] -m`
+    -   For bonus part testing: `./tester.sh [server_pid] -b`
+    
+    Replace `[server_pid]` with the process ID of the server.
+    
+    **Note:** You can use both options `-m` and `-b` together to test both mandatory and bonus parts.
+    
+4.  The tester script will execute various test cases to validate the functionality of your implementation.
+
+## Copyright
+
 Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
