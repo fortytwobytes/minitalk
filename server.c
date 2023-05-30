@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: relkabou <relkabou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:09:47 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/11/27 12:31:45 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/05/30 18:03:19 by relkabou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,24 +44,24 @@ void	sigerror(pid_t clientpid)
 	exit(-1);
 }
 
-void	sighandlehelp(char *c, int *i, pid_t *clientpid)
+void	sighandlehelp(char *byte, int *bits, pid_t *clientpid)
 {
-	write(1, c, 1);
-	if (*c == '\0')
+	write(1, byte, 1);
+	if (*byte == '\0')
 	{
 		write(1, "\n", 1);
-		*c = 0;
+		*byte = 0;
 		if (kill(*clientpid, SIGUSR1) == -1)
 			sigerror(*clientpid);
 		return ;
 	}
-	*i = 0;
+	*bits = 0;
 }
 
 void	sighandle(int sig, siginfo_t *info, void *context)
 {
-	static int		i;
-	static char		c;
+	static int		bits;
+	static char		bytes;
 	static pid_t	clientpid;
 	static pid_t	workingpid;
 
@@ -72,14 +72,14 @@ void	sighandle(int sig, siginfo_t *info, void *context)
 	if (clientpid != workingpid)
 	{
 		clientpid = workingpid;
-		i = 0;
-		c = 0;
+		bits = 0;
+		bytes = 0;
 	}
-	c = c | (sig == SIGUSR2);
-	i++;
-	if (i == 8)
-		sighandlehelp(&c, &i, &clientpid);
-	c <<= 1;
+	bytes = bytes | (sig == SIGUSR2);
+	bits++;
+	if (bits == 8)
+		sighandlehelp(&bytes, &bits, &clientpid);
+	bytes <<= 1;
 	usleep(100);
 	kill(clientpid, SIGUSR2);
 }

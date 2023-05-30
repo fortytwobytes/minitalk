@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aarbaoui <aarbaoui@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: relkabou <relkabou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 15:09:53 by aarbaoui          #+#    #+#             */
-/*   Updated: 2022/11/27 13:21:43 by aarbaoui         ###   ########.fr       */
+/*   Updated: 2023/05/30 18:03:19 by relkabou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	signal_error(void)
 	exit(-1);
 }
 
-void	chartobin(unsigned char c, pid_t pid)
+void	chartobin(unsigned char byte, pid_t pid)
 {
 	int	bit;
 
 	bit = 0;
 	while (bit < 8)
 	{
-		if (c & 128)
+		if (byte & 128)
 		{
 			if (kill(pid, SIGUSR2) == -1)
 				signal_error();
@@ -35,7 +35,7 @@ void	chartobin(unsigned char c, pid_t pid)
 			if (kill(pid, SIGUSR1) == -1)
 				signal_error();
 		}
-		c <<= 1;
+		byte <<= 1;
 		bit++;
 		pause();
 		usleep(100);
